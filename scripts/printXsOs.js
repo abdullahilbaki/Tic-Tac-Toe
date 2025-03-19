@@ -19,14 +19,14 @@ xsOsBoard.prepend(caption);
             boardState[index] = "X";
 
             if (!checkWinner()) {
-                caption.innerHTML = `<p class="mb-4 winky-sans text-amber-900 text-2xl">Player 2 to move: 0</p>`;
+                caption.innerHTML = `<p class="mb-4 winky-sans text-amber-900 text-2xl">Player 2 to move: &#2918;</p>`;
                 xsOsBoard.prepend(caption);
                 playerOneTurn = false;
             } else {
                 gameOver = true;
             }
         } else {
-            header.innerHTML = "<p class='winky-sans text-amber-900 font-medium text-6xl'>&#8413;</p>"
+            header.innerHTML = "<p class='winky-sans text-amber-900 font-medium text-6xl'>&#2918;</p>"
             boardState[index] = "O";
 
             if (!checkWinner()) {
