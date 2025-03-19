@@ -36,7 +36,7 @@ const checkWinner = () => {
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
-                    location.reload(); // Restart game
+                    location.reload(); 
                 } else if (result.isDismissed) {
                     Swal.fire({
                         title: '👋 Alright!',
