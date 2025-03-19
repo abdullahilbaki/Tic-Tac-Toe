@@ -38,6 +38,42 @@ xsOsBoard.prepend(caption);
             }
         }
 
+        if (boardState.every(cell => cell !== "") && !checkWinner()) {
+            caption.innerHTML = `<p class="mb-4 winky-sans text-amber-900 text-2xl">🤝 It's a draw!</p>`;
+            xsOsBoard.prepend(caption);
+            gameOver = true;
+
+            Swal.fire({
+                title: '🤝 It\'s a draw!',
+                text: 'Nobody loses... or wins. Play again?',
+                icon: 'info',
+                confirmButtonText: 'Let\'s go!',
+                showCancelButton: true,
+                customClass: {
+                    popup: 'winky-sans'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload(); // Restart game
+                } else if (result.isDismissed) {
+                    Swal.fire({
+                        title: '👋 Alright!',
+                        text: 'Thanks for playing!',
+                        icon: 'info',
+                        confirmButtonText: 'Bye 👋',
+                        confirmButtonColor: '#f59e0b',
+                        background: '#fef3c7',
+                        color: '#78350f',
+                        customClass: {
+                            popup: 'winky-sans'
+                        }
+                    });
+                }
+
+            });
+        }
+
         console.log(boardState);
     });
 });
+
