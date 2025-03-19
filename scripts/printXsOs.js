@@ -15,7 +15,7 @@ xsOsBoard.prepend(caption);
         if (boardState[index] !== "" || gameOver) return;
 
         if (playerOneTurn) {
-            header.innerHTML = "<p class='winky-sans text-amber-900 font-medium text-6xl'>&Cross;</p>"
+            header.innerHTML = "<p class='winky-sans text-amber-900 font-medium text-6xl'>&#9932;</p>"
             boardState[index] = "X";
 
             if (!checkWinner()) {
