@@ -1,77 +1,111 @@
 <!DOCTYPE html>
 <html lang="en" class="bg-orange-100">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/tic-tac-toe-icon.jpg" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/tic-tac-toe-icon.jpg"
+      type="image/x-icon"
+    />
     <title>Tic-Tac-Toe</title>
 
     <!-- include tailwind -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Winky Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- custom css -->
     <style>
-        .winky-sans {
-            font-family: "Winky Sans", sans-serif;
-        }
+      .winky-sans {
+        font-family: "Winky Sans", sans-serif;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <nav class="container mx-auto p-4">
-        <a href="/" class="inline-flex items-center gap-4">
-            <img class="w-10 h-10 sm:w-14 sm:h-14" src="./assets/tic-tac-toe-icon.jpg" alt="tic-tac-toe-icon">
-            <h1 class="font-semibold text-3xl sm:text-5xl winky-sans text-amber-900">Tic-Tac-Toe</h1>
-        </a>
+      <a href="/" class="inline-flex items-center gap-4">
+        <img
+          class="w-10 h-10 sm:w-14 sm:h-14"
+          src="./assets/tic-tac-toe-icon.jpg"
+          alt="tic-tac-toe-icon"
+        />
+        <h1
+          class="font-semibold text-3xl sm:text-5xl winky-sans text-amber-900"
+        >
+          Tic-Tac-Toe
+        </h1>
+      </a>
     </nav>
 
     <div class="mt-20 container mx-auto p-4">
+      <div
+        class="p-4 sm:p-10 bg-orange-200 rounded-2xl flex flex-col items-center justify-center gap-8"
+      >
+        <table
+          id="xs-os-board"
+          class="border-collapse border-2 sm:border-3 border-amber-900 p-6"
+        >
+          <tr>
+            <th
+              class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"
+            ></th>
+            <th
+              class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"
+            ></th>
+            <th
+              class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"
+            ></th>
+          </tr>
+          <tr>
+            <th
+              class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"
+            ></th>
+            <th
+              class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"
+            ></th>
+            <th
+              class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"
+            ></th>
+          </tr>
+          <tr>
+            <th
+              class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"
+            ></th>
+            <th
+              class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"
+            ></th>
+            <th
+              class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"
+            ></th>
+          </tr>
+        </table>
 
-        <div class="p-4 sm:p-10 bg-orange-200 rounded-2xl flex flex-col items-center justify-center gap-8">
-            <table id="xs-os-board" class="border-collapse border-2 sm:border-3 border-amber-900 p-6">
-
-                <tr>
-                    <th class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"></th>
-                    <th class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"></th>
-                    <th class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"></th>
-                </tr>
-                <tr>
-                    <th class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"></th>
-                    <th class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"></th>
-                    <th class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"></th>
-                </tr>
-                <tr>
-                    <th class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"></th>
-                    <th class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"></th>
-                    <th class="border-2 sm:border-3 border-amber-900 p-2 w-20 h-20 cursor-pointer"></th>
-                </tr>
-
-            </table>
-
-            <button id="play-again" class="btn btn-warning winky-sans text-lg">Play again</button>
-        </div>
-
+        <button id="play-again" class="btn btn-warning winky-sans text-lg">
+          Play again
+        </button>
+      </div>
     </div>
-
-
 
     <!-- scripts -->
     <script src="./scripts/printXsOs.js"></script>
     <script src="./scripts/checkWinner.js"></script>
     <script src="./scripts/playAgain.js"></script>
     <script src="./scripts/showPopup.js"></script>
-</body>
-
+  </body>
 </html>
