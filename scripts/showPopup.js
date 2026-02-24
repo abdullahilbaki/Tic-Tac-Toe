@@ -3,7 +3,7 @@ const showWinPopup = (winner) => {
 
   Swal.fire({
     title: `🎉 Player ${playerText} wins!`,
-    text: "Would you like to play again?",
+    text: "Do you want to play again?",
     icon: "success",
     showCancelButton: true,
     confirmButtonText: "Yes! 🎮",

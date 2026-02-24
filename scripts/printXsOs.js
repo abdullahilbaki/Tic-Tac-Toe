@@ -27,13 +27,13 @@ xsOsBoard.prepend(caption);
       const winner = checkWinner();
       if (winner) {
         gameOver = true;
-        showWinPopup(winner);
+        setTimeout(() => showWinPopup(winner), 700);
         return;
       }
 
       if (boardState.every((cell) => cell !== "")) {
         gameOver = true;
-        showDrawPopup();
+        setTimeout(() => showDrawPopup(), 700);
         return;
       }
 
